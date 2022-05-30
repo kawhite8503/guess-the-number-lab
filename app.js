@@ -4,9 +4,14 @@ const game = {
   smallestNum: 1,
   secretNum: null,
   prevGuesses: []
-  let getGuess = ''
-  while (getGuess !== ''){
-    getGuess = prompt(`Enter a guess between ${smallestNum} and ${biggestNum}`)
+  getGuess: function(guess){
+    prompt(`Enter a guess between ${smallestNum} and ${biggestNum}`)
+    const parsed = parseInt(guess)
+    if (isNaN(parsed)) {
+      return NaN
+    } else if (guess <= this.biggestNum && guess >= this.smallestNum){
+      return parsed
+    }
     }
   }
   play: function() {
@@ -14,4 +19,3 @@ const game = {
       (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
   }
 }
-
