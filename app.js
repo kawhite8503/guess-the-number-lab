@@ -16,7 +16,15 @@ const game = {
     let parsedGuess
     while(!parsedGuess || parsedGuess > this.biggestNum || parsedGuess < this.smallestNum) {
       parsedGuess = parseInt(prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}`))
-      if (isNaN(parsedGuess) || parsedGuess > this.biggestNum || parsedGuess < this.smallestNum) {
+      // if (isNaN(parsedGuess)) {
+      //   alert('This is not a valid entry')
+      // } else if (parsedGuess > this.biggestNum) {
+      //   this.biggestNum = this.parsedGuess
+      // } else if (parsedGuess < this.smallestNum) {
+      //   this.smallestNum = this.parsedGuess
+      // }}
+
+        if (isNaN(parsedGuess) || parsedGuess > this.biggestNum || parsedGuess < this.smallestNum) {
         alert('This is not a valid entry')
     }}
     return parsedGuess
