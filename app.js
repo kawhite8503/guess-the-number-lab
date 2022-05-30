@@ -21,6 +21,15 @@ const game = {
       while (getGuess !== this.secretNum) {
         prevGuess.push(getGuess())
       }
+      render()
   }
-  
+  render: function() {
+    if (this.getGuess === this.secretNum) {
+      alert(`Congrats! You guessed the number in ${this.prevGuesses.length} guesses`)
+    } else if (getGuess > this.secretNum) {
+      alert(`Your guess is too high. Previous guesses ${this.prevGuesses.join(', ')}`)
+    } else if (getGuess < this.secretNum) {
+      alert(`Your guess is too low. Previous guesses ${this.prevGuesses.join(', ')}`)
+    }
+  }
 }
